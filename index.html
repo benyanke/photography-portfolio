@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<head>
 <title>Ben Yanke Photography Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
@@ -18,6 +19,8 @@ body {
     margin-right: auto;
 }
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
 <body>
 
 <h2 class="w3-center">Ben Yanke's Photography Portfolio</h2>
@@ -49,8 +52,8 @@ body {
   <img class="mySlides" src="img/tenebrae.jpg">
   <img class="mySlides" src="img/summer-play-cast-2016.JPG">
 
-  <a class="w3-btn-floating" style="position:absolute;top:45%;left:0" onclick="plusDivs(-1)">❮</a>
-  <a class="w3-btn-floating" style="position:absolute;top:45%;right:0" onclick="plusDivs(1)">❯</a>
+  <a class="w3-btn-floating" style="position:absolute;top:45%;left:0" onclick="plusDivs(-1)"><</a>
+  <a class="w3-btn-floating" style="position:absolute;top:45%;right:0" onclick="plusDivs(1)">></a>
 </div>
 
 <script>
@@ -79,6 +82,30 @@ function showDivs(n) {
   }
   x[slideIndex-1].style.display = "block";
 }
+
+
+
+
+$(document).keydown(function(e) {
+    switch(e.which) {
+        case 37: // left
+		backward();
+        break;
+
+        case 38: // up
+        break;
+
+        case 39: // right
+		forward();
+        break;
+
+        case 40: // down
+        break;
+
+        default: return; // exit this handler for other keys
+    }
+    e.preventDefault(); // prevent the default action (scroll / move caret)
+});
 </script>
 
 </body>
